@@ -1,0 +1,35 @@
+
+# dependencies
+blog-Backend/node_modules
+blog-Backend/config.env
+hello-next/node_modules
+hello-next/.pnp
+hello-next.pnp.js
+
+# testing
+hello-next/coverage
+
+# next.js
+hello-next/.next/
+hello-next/out/
+
+# production
+hello-next/build
+
+# misc
+.hello-next/DS_Store
+hello-next/*.pem
+
+# debug
+hello-next/npm-debug.log*
+hello-next/yarn-debug.log*
+hello-next/yarn-error.log*
+
+# local env files
+hello-next/.env.local
+hello-next/.env.development.local
+hello-next/.env.test.local
+hello-next/.env.production.local
+
+# vercel
+hello-next/.vercel

@@ -1,0 +1,46 @@
+@import "../pages/index.module.scss";
+
+
+div.article{
+    border: $secondary-main-color 2px solid;
+    padding: 0.8rem 1rem;
+    border-radius: 7px;
+    width: 55vw;
+    height: 11rem;
+    margin: 1rem 0 2rem 0;
+    font-family: "Inter";
+    cursor: pointer;
+    color: $secondary-main-color;
+ box-shadow: 10px 10px 0px 0px $hover-color;
+-webkit-box-shadow: 10px 10px 0px 0px $hover-color;
+-moz-box-shadow: 10px 10px 0px 0px $hover-color;
+background: $bg-main-color;
+    //    border-radius: 24px;
+    //  background: #fcfcfc;
+    //      box-shadow:  13px 13px 56px #fcfcfc,
+    //          -13px -13px 56px #ffffff;
+
+    div.articleHead h1{
+        font-size: 1.3rem;
+        color: $hover-color;
+    }
+    div.articleHead h1:hover{
+        color: $secondary-main-color;
+    }
+
+    div.articleDate{
+        margin: 5px 0 0 0;
+    }
+
+    div.someBlogData{
+        height: 5.01rem;
+        margin:6px 0 0 0;
+        overflow: hidden;
+    }
+}
+
+div.article:hover{
+  box-shadow: 10px 10px 0px 0px $secondary-main-color;
+-webkit-box-shadow: 10px 10px 0px 0px $secondary-main-color;
+-moz-box-shadow: 10px 10px 0px 0px $secondary-main-color;
+}

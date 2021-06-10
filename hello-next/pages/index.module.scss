@@ -1,0 +1,140 @@
+$bg-main-color: #f1f1f1;
+$secondary-main-color: #2b2b2b;
+$secondary-color: #5a5a5a;
+$tertiary-main-color: #898989;
+$tertiary-color: #bcbcbc;
+$hover-color: #0693f1;
+
+section.blogHead {
+  height: 100vh;
+  width: 100%;
+  background-color: $secondary-main-color;
+  // background-image: url("../public/taylor-vick-M5tzZtFCOfs-unsplash.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: repeat;
+
+  .myPic {
+    border-radius: 50%;
+  }
+
+  div.head {
+    height: 97vh;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div.blogHeadData {
+    width: 80vw;
+    height: 55vh;
+    text-align: center;
+
+    @keyframes getUpBaby {
+      from{transform:translate(0,5.7rem)}
+      to{transform:translate(0,0)}
+    }
+
+    h1 {
+      font-size: 4.8rem;
+      color: $bg-main-color;
+      font-family: "Inter";
+      animation-name: getUpBaby;
+      animation-duration: 1s;
+    }
+
+    h4 {
+      margin: 2rem 0 0 0;
+      font-size: 1.9rem;
+      color: $tertiary-color;
+      font-family: "Inter";
+      transition: color 0.5s;
+    }
+    h4:hover {
+      color: $hover-color;
+      cursor: pointer;
+    }
+  } 
+
+  @keyframes getSideBaby {
+    from{left: -14%}
+    to{left: -8%}
+  }
+
+ div.socialLinks{
+    position:absolute;
+    left: -8%;
+    display: flex;
+    height: 2rem;
+    width: 22rem;
+    animation-name: getSideBaby;
+    animation-duration: 1s;
+    justify-content: space-between;
+    transform: rotate(-90deg);
+
+    a.socialLink{
+    font-size: 0.9rem;
+    font-family: "Inter";
+    font-family: 850;
+    color: $tertiary-color;
+    transition: color 0.4s;
+    }
+
+    a.socialLink:hover{
+      color: $hover-color;
+      transform:scale(1.1,1.1)
+    }
+  }
+
+}
+
+section.blogPosts {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $bg-main-color;
+  div.searchInput {
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    align-items: center;
+
+    input[type="search"] {
+      width: 30rem;
+      padding: 0.2rem 1rem;
+      outline-width: 0;
+      color: $hover-color;
+    }
+    input[type="search"]::placeholder {
+      color: $hover-color;
+    }
+  }
+
+  div.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+footer.blogFooter {
+  width: 100%;
+  height: 6vh;
+  background-color: $secondary-main-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 1rem;
+    color: $tertiary-color;
+    font-family: "Inter";
+    cursor: pointer;
+    transition: color 0.5s;
+  }
+
+  h1:hover {
+    color: $hover-color;
+  }
+}
