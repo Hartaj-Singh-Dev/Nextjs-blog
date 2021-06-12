@@ -99,7 +99,7 @@ export default function Home({allposts}) {
 
 
 export  const getServerSideProps : GetServerSideProps =  async (context)=> {
-  const res = await fetch(`http://localhost:8000/allPosts`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_FETCH_URL}/allPosts`)
   const data = await res.json()
  const allPost = data.data.blogposts
  const allposts =  allPost.reverse()

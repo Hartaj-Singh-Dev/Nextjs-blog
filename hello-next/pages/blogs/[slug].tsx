@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 const Nothing =async ()=>{
-  const resPosts = await fetch('http://localhost:8000/allPosts')
+  const resPosts = await fetch(`${process.env.NEXT_PUBLIC_FETCH_URL}/allPosts`)
   const posts = await resPosts.json()
   const datapost = posts.data.blogposts
   return datapost
@@ -92,7 +92,7 @@ const BlogPost = ({Post}) => {
 }
 
 export const getStaticProps: GetStaticProps= async (context)=>{
-  const res = await fetch(`http://localhost:8000/allPosts`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_FETCH_URL}/allPosts`)
   const data = await res.json()
  const Posts = data.data.blogposts
  const posts = Posts.filter((item)=>{
