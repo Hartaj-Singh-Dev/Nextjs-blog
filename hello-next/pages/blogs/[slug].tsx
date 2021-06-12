@@ -52,7 +52,7 @@ const BlogPost = ({Post}) => {
                     <div className={blogStyle.headerPicture}>
                         <img src={Post.imageLinks1} height={450} alt="Post Header" width={750}  loading="lazy"/>
                     </div>
-                        <p></p>
+                        <p className={blogStyle.Content}>{Post.content.slice(0,950)}</p>
                     <div className="contentStartsWORDS50">
                           {/* <Image src={props.imageLinks2}/> */}
                     </div>
@@ -93,7 +93,7 @@ export const getStaticProps: GetStaticProps= async (context)=>{
   }
 
   return {
-    props: {Post},
+    props: {Post},revalidate:800,
   }
 }
 

@@ -4,7 +4,7 @@ import Head from 'next/head'
 import styles from './index.module.scss'
 import ReactPaginate from 'react-paginate';
 import Articles from '../components/Articles';
-import { GetStaticProps } from "next";
+import { GetStaticProps ,GetServerSideProps } from "next";
 
 
 export default function Home({allposts}) {
@@ -97,7 +97,7 @@ export default function Home({allposts}) {
 }
 
 
-export  const getStaticProps : GetStaticProps =  async (context)=> {
+export  const getServerSideProps : GetServerSideProps =  async (context)=> {
   const res = await fetch(`http://localhost:8000/allPosts`)
   const data = await res.json()
  const allPost = data.data.blogposts
@@ -110,6 +110,6 @@ export  const getStaticProps : GetStaticProps =  async (context)=> {
   }
 
   return {
-    props: {allposts}, revalidate:300 ,
+    props: {allposts},
   }
 }

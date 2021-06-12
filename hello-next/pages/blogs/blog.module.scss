@@ -38,11 +38,16 @@ main.BlogPosts{
             text-align: center;
             margin: 0.3rem 0;
         }
+        p.Content{
+            font-family: "Poppins";
+            white-space: pre-wrap;
+            width: 100%;
+        }
 
         div.articleDate{
             margin: 10px 0 0 0 ;
             h3{
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-family: "Poppins";
                 letter-spacing: 1px;
                 color: $secondary-main-color;
