@@ -31,11 +31,12 @@ export default function Home({allposts}) {
         <meta property="og:type" content="website" />
        <meta name="description" content="The Hartaj Writes blog by Hartaj Singh Short and simple articles on web development and Computer Programming." />
        <meta charSet="utf-8"/>
-       {
+       <meta name="keywords" content="dev , development ,Programming , Database ,  CORS , Coding , stackoverflow , React , next js , node js , express , mongo db, sql ,SQl" />
+       {/* {
          allposts.map((item)=>{
            return <meta name="Keywords"  key={item._id} content={`${item.blogKeyword1} , ${item.blogKeyword2} ,${item.blogKeyword3} ,${item.blogKeyword4}`}/>
          })
-       }
+       } */}
        {/* <meta name="Keywords" content=""/> */}
        <meta name="author" content="Hartaj Singh Sidhu"/>
        <meta property="og:site_name" content="Hartaj Writes | blog | articles | programming" />

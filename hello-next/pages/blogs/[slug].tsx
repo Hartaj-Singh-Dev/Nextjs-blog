@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from "next/head"
 import blogStyle from './blog.module.scss'
 import Image from 'next/image';
@@ -26,10 +26,15 @@ export async function getStaticPaths(context){
 
 
 const BlogPost = ({Post}) => {
+
     return (
         <React.Fragment>
             <Head>
-              <meta name="Keywords" content={`${Post.blogKeyword4} , ${Post.blogKeyword3} , ${Post.blogKeyword2} ,${Post.blogKeyword1}`}/>
+              <meta name="description" content={Post.content.slice(0,155)} />
+              <meta name="Keywords" content={`${Post.blogKeyword4} , ${Post.blogKeyword3} , ${Post.blogKeyword2} , "development " , "programming" ,"Coding",${Post.blogKeyword1}`}/>
+             <meta property="og:type" content="article" />
+             <meta property="og:title" content={Post.title}/>
+             <meta property="og:description" content={Post.content.slice(0.155)} />
                <title>{Post.title}</title>
             </Head>
             <header>
@@ -67,8 +72,20 @@ const BlogPost = ({Post}) => {
                     </div>
                 </section>
             </main>
-            <footer>
-
+            <footer className={blogStyle.footBlock}>
+              <section className={blogStyle.authorBlock}>
+                 <div className="Image">
+                    <Image src="/Hartaj Singh Sidhu.jpg" height={50} width={50} loading="lazy" className={blogStyle.authorImage}/>
+                 </div>
+                 <div className={blogStyle.authorData}>
+                  The Hartaj Writes blog by Hartaj Singh.
+                      Straight Forward and simple articles on web development and 
+                        Computer Programming.
+                 </div> 
+               </section>
+                 <div className={blogStyle.goBackButton}>
+                   <Link href="/"><h1>Go Back</h1></Link>
+                 </div>
             </footer>
         </React.Fragment>
     )

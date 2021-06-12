@@ -17,7 +17,7 @@ const Articles = (props) => {
                 </div>
                 <div className={artStyle.someBlogData}>
                     <b>Content</b>
-                :-{props.content}
+                :-{props.content.slice(0,252)}
                 </div>
             </div>
             </article>
