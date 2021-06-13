@@ -42,15 +42,25 @@ main.BlogPosts{
             font-family: "Poppins";
             white-space: pre-wrap;
             width: 100%;
+            margin: 2rem 0 1rem 0;
         }
 
         div.articleDate{
-            margin: 10px 0 0 0 ;
+            margin: 14px 0 2rem 0 ;
             h3{
                 font-size: 1rem;
                 font-family: "Poppins";
                 letter-spacing: 1px;
                 color: $secondary-main-color;
+
+                span.ReadTime{
+                    border: 1px solid #cfcfcf;
+                    padding: 0.1rem 0.2rem;
+                    border-radius: 7px;
+                    background-color: #cfcfcf;
+                    font-size: 0.8rem;
+                    color: #fafafa;
+                }
             }
         }
         div.articleTitle{

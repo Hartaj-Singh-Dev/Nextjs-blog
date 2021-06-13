@@ -27,7 +27,7 @@ const CreateBlog = () => {
     const CreateblogPost = async (event)=>{
         event.preventDefault()
         const{ title, date, content, imageLinks1, imageLinks2, imageLinks3, imageLinks4 ,blogKeyword1 ,blogKeyword2,blogKeyword3,blogKeyword4} = blogData
-           await fetch("http://localhost:8000/createPost",{
+           await fetch(`${process.env.NEXT_PUBLIC_FETCH_URL}/createPost`,{
                 mode:'cors',
                 method:"POST",
                 headers:{

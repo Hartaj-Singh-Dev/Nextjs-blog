@@ -5,10 +5,12 @@ import styles from './index.module.scss'
 import ReactPaginate from 'react-paginate';
 import Articles from '../components/Articles';
 import { GetStaticProps ,GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 
 
 export default function Home({allposts}) {
   const [blog, setblog] = useState("")
+  const router = useRouter()
 //  const blogs = [{title:"Cors Error" , Date:" 06-10-2005",Content:"fibvuasfhuabsgiubsiugfus" ,id:"CorsId-9815153073"},{title:"How does Internet Work" , Date:"hreuogho" ,Content:"hguighs" ,id:"howdoesinternet work"}]
 
   const searchBlog =async (event)=>{
@@ -23,8 +25,6 @@ export default function Home({allposts}) {
     console.log(POSTS) 
     return POSTS  
   }
-
-
   return (
     <React.Fragment>
       <Head>
@@ -52,7 +52,7 @@ export default function Home({allposts}) {
       <section className={styles.blogHead}>
         <div className={styles.head}>
           <div className="myBlogPic">
-           <Image src="/AnyConv.com__Favicon.jpg" height={250} width={250} className={styles.myPic} loading="eager"/>
+           <Image src="/AnyConv.com__Favicon.jpg" height={220} width={220}  className={styles.myPic} loading="eager"/>
           </div>
           <div className={styles.blogHeadData}>
             <div style={{overflow:"hidden"}}>
@@ -87,7 +87,6 @@ export default function Home({allposts}) {
               return <Articles title={itemData.title} key={itemData._id} date={itemData.date} content={itemData.content}/>
             })
           }
-
         </div>
       </section>
       <footer className={styles.blogFooter}>

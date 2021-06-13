@@ -16,6 +16,8 @@ section.blogHead {
 
   .myPic {
     border-radius: 50%;
+    height: 18rem;
+    width: 18rem;
   }
 
   div.head {
@@ -33,8 +35,12 @@ section.blogHead {
     text-align: center;
 
     @keyframes getUpBaby {
-      from{transform:translate(0,5.7rem)}
-      to{transform:translate(0,0)}
+      from {
+        transform: translate(0, 5.7rem);
+      }
+      to {
+        transform: translate(0, 0);
+      }
     }
 
     h1 {
@@ -56,15 +62,19 @@ section.blogHead {
       color: $hover-color;
       cursor: pointer;
     }
-  } 
-
-  @keyframes getSideBaby {
-    from{left: -14%}
-    to{left: -8%}
   }
 
- div.socialLinks{
-    position:absolute;
+  @keyframes getSideBaby {
+    from {
+      left: -14%;
+    }
+    to {
+      left: -8%;
+    }
+  }
+
+  div.socialLinks {
+    position: absolute;
     left: -8%;
     display: flex;
     height: 2rem;
@@ -74,20 +84,19 @@ section.blogHead {
     justify-content: space-between;
     transform: rotate(-90deg);
 
-    a.socialLink{
-    font-size: 0.9rem;
-    font-family: "Inter";
-    font-family: 850;
-    color: $tertiary-color;
-    transition: color 0.4s;
+    a.socialLink {
+      font-size: 0.9rem;
+      font-family: "Inter";
+      font-family: 850;
+      color: $tertiary-color;
+      transition: color 0.4s;
     }
 
-    a.socialLink:hover{
+    a.socialLink:hover {
       color: $hover-color;
-      transform:scale(1.1,1.1)
+      transform: scale(1.1, 1.1);
     }
   }
-
 }
 
 section.blogPosts {
@@ -136,5 +145,151 @@ footer.blogFooter {
 
   h1:hover {
     color: $hover-color;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  section.blogHead {
+    height: 90vh;
+    width: 100%;
+    background-color: $secondary-main-color;
+    // background-image: url("../public/taylor-vick-M5tzZtFCOfs-unsplash.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: repeat;
+
+    .myPic {
+      border-radius: 50%;
+      height: 10rem;
+      width: 10rem;
+    }
+
+    div.head {
+      height: 100vh;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    div.blogHeadData {
+      width: 80vw;
+      height: 65vh;
+      text-align: center;
+
+      @keyframes getUpBaby {
+        from {
+          transform: translate(0, 8rem);
+        }
+        to {
+          transform: translate(0, 0);
+        }
+      }
+
+      h1 {
+        font-size: 4.3rem;
+        color: $bg-main-color;
+        font-family: "Inter";
+        animation-name: getUpBaby;
+        animation-duration: 0.8s;
+      }
+
+      h4 {
+        margin: 2.3rem 0 0 0;
+        font-size: 1.5rem;
+        color: $tertiary-color;
+        font-family: "Inter";
+        transition: color 0.5s;
+      }
+      h4:hover {
+        color: $hover-color;
+        cursor: pointer;
+      }
+    }
+
+    @keyframes getSideBaby {
+      from {
+        left: -50%;
+      }
+      to {
+        left: -35%;
+      }
+    }
+
+    div.socialLinks {
+      position: absolute;
+      left: -35%;
+      display: flex;
+      height: 2rem;
+      width: 22rem;
+      animation-name: getSideBaby;
+      animation-duration: 1s;
+      justify-content: space-between;
+      transform: rotate(-90deg);
+
+      a.socialLink {
+        font-size: 0.9rem;
+        font-family: "Inter";
+        font-family: 850;
+        color: $tertiary-color;
+        transition: color 0.4s;
+      }
+
+      a.socialLink:hover {
+        color: $hover-color;
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+
+  section.blogPosts {
+    min-height: 50vh;
+    width: 100%;
+    background-color: $bg-main-color;
+    div.searchInput {
+      display: flex;
+      justify-content: center;
+      height: 6rem;
+      align-items: center;
+
+      input[type="search"] {
+        width: 23rem;
+        padding: 0.1rem 1rem;
+        outline-width: 0;
+        color: $hover-color;
+      }
+      input[type="search"]::placeholder {
+        color: $hover-color;
+      }
+    }
+
+    div.posts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  footer.blogFooter {
+    width: 100%;
+    height: 9vh;
+    background-color: $secondary-main-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      font-size: 1rem;
+      color: $tertiary-color;
+      font-family: "Inter";
+      cursor: pointer;
+      transition: color 0.5s;
+    }
+
+    h1:hover {
+      color: $hover-color;
+    }
   }
 }

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from "next/head"
 import blogStyle from './blog.module.scss'
 import Image from 'next/image';
 import Link from 'next/link'
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 
 const Nothing =async ()=>{
   const resPosts = await fetch(`${process.env.NEXT_PUBLIC_FETCH_URL}/allPosts`)
@@ -51,13 +51,13 @@ const BlogPost = ({Post}) => {
                     </div>
 
                     <div className={blogStyle.articleDate}>
-                      <h3>Date:-{" "}{Post.date}</h3>
+                      <h3>Date:-{" "}{Post.date.slice(0,10)} &nbsp;  <span className={blogStyle.ReadTime}>{"  "}{Post.date.slice(11)}</span></h3>
                     </div>
 
                     <div className={blogStyle.headerPicture}>
                         <img src={Post.imageLinks1} height={450} alt="Post Header" width={750}  loading="lazy"/>
                     </div>
-                        <p className={blogStyle.Content}>{Post.content.slice(0,950)}</p>
+                        <p className={blogStyle.Content}>{Post.content}</p>
                     <div className="contentStartsWORDS50">
                           {/* <Image src={props.imageLinks2}/> */}
                     </div>
@@ -101,7 +101,6 @@ export const getStaticProps: GetStaticProps= async (context)=>{
    }
  })
  const Post = posts[0]
- console.log(Post)
 
   if (!data) {
     return {
