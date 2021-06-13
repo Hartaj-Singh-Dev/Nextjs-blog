@@ -13,7 +13,7 @@ const Articles = (props) => {
                     </Link>
                 </div>
                 <div className={artStyle.articleDate}>
-                    <b>Date</b>: {props.date}
+                    <b>Date</b>: {props.date.slice(0,10)}
                 </div>
                 <div className={artStyle.someBlogData}>
                     <b>Content</b>
