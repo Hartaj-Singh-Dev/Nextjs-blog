@@ -75,18 +75,17 @@ const BlogPost = ({ Post }) => {
             />
           </div>
           <div className="contentWithImages">
-            <p className={blogStyle.Content}>{Post.content.slice(0,1000)}</p>
+            <p className={blogStyle.Content} dangerouslySetInnerHTML={{__html:Post.content.slice(0,1000)}}></p>
             <div className="contentStartsWORDS1001">
                <img  src={Post.imageLinks2}  height={450}  alt="Post Picture"  width={750} loading="lazy"/>
-               <p className={blogStyle.Content}>{Post.content.slice(1001 , 2000)}</p>
+               <p className={blogStyle.Content}  dangerouslySetInnerHTML={{__html:Post.content.slice(1001,2000)}}></p>
             </div>
-           
             <div className="contentStartsWORD2000">
                <img  src={Post.imageLinks3}  height={450}  alt="Post Picture"  width={750} loading="lazy"/>
-               <p className={blogStyle.Content}>{Post.content.slice(2001 , 4000)}</p>
+               <p className={blogStyle.Content} dangerouslySetInnerHTML={{__html:Post.content.slice(2001,4000)}}></p>
             </div>
             <div className="contentStartsWORDS2800">
-              <p className={blogStyle.Content}>{Post.content.slice(4001,5000)}</p> 
+              <p className={blogStyle.Content} dangerouslySetInnerHTML={{__html:Post.content.slice(4001,6000)}}></p> 
               <div className="thankuGIF">
                 <img  src={Post.imageLinks4}  height={250}  alt="Post Picture"  width={850} loading="lazy"/>
               </div>
