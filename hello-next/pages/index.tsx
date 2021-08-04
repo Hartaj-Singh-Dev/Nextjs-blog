@@ -79,7 +79,7 @@ export default function Home({allposts}) {
 
       <section className={styles.blogPosts}>
         <div className={styles.searchInput}>
-          <input type="search" placeholder="Search.."  name="blogType" value={blog} onChange={(event)=>{searchBlog(event)}}/>
+          <input type="search" placeholder="Search Blogs .."  name="blogType" value={blog} onChange={(event)=>{searchBlog(event)}}/>
         </div>
         <div className={styles.posts}>
           {

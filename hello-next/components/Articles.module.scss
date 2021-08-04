@@ -49,9 +49,9 @@ div.article:hover {
     border: $secondary-main-color 2px solid;
     padding: 0.4rem 0.7rem;
     border-radius: 7px;
-    width: 80vw;
-    height: 12rem;
-    margin: 1rem 0 2rem 0;
+    width: 90vw;
+    height: 17rem;
+    margin: 0.5rem 0 1.6rem 0;
     font-family: "Inter";
     cursor: pointer;
     color: $secondary-main-color;
@@ -73,12 +73,12 @@ div.article:hover {
     }
 
     div.articleDate {
-      margin: 5px 0 0 0;
+      margin: 3px 0 0 0;
     }
 
     div.someBlogData {
-      height: 4.6rem;
-      margin: 6px 0 0 0;
+      height: 9rem;
+      margin: 3px 0 0 0;
       overflow: hidden;
     }
   }

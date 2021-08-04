@@ -247,7 +247,7 @@ footer.blogFooter {
   }
 
   section.blogPosts {
-    min-height: 50vh;
+    min-height: 30vh;
     width: 100%;
     background-color: $bg-main-color;
     div.searchInput {
@@ -257,7 +257,7 @@ footer.blogFooter {
       align-items: center;
 
       input[type="search"] {
-        width: 23rem;
+        width: 20rem;
         padding: 0.1rem 1rem;
         outline-width: 0;
         color: $hover-color;
