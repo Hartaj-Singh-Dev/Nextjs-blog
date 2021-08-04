@@ -105,9 +105,7 @@ const BlogPost = ({ Post }) => {
             />
           </div>
           <div className={blogStyle.authorData}>
-            The Hartaj Writes blog by Hartaj Singh. Straight Forward and simple
-            articles on web development and Computer Programming.
-          </div>
+            The Hartaj Writes blog by Hartaj Singh</div>
         </section>
         <div className={blogStyle.goBackButton}>
           <Link href="/">
