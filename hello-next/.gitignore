@@ -25,6 +25,8 @@
 .DS_Store
 *.pem
 
+/pages/createblog.tsx
+
 # debug
 npm-debug.log*
 yarn-debug.log*
