@@ -86,8 +86,8 @@ const BlogPost = ({ Post }) => {
             </div>
             <div className="contentStartsWORDS2800">
               <p className={blogStyle.Content} dangerouslySetInnerHTML={{__html:Post.content.slice(4001,6000)}}></p> 
-              <div className="thankuGIF">
-                <img  src={Post.imageLinks4}  height={250}  alt="Post Picture"  width={850} loading="lazy"/>
+              <div className={blogStyle.thankuGIF}>
+                <img  src={Post.imageLinks4}  height={250}  alt="Post Picture"  width={500} loading="lazy"/>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ const BlogPost = ({ Post }) => {
         <section className={blogStyle.authorBlock}>
           <div className="Image">
             <Image
-              src="/Hartaj Singh Sidhu.jpg"
+              src="/nothing.png"
               height={50}
               width={50}
               loading="lazy"
@@ -109,7 +109,7 @@ const BlogPost = ({ Post }) => {
         </section>
         <div className={blogStyle.goBackButton}>
           <Link href="/">
-            <h1>Go Back</h1>
+            <h1> Go Back</h1>
           </Link>
         </div>
       </footer>

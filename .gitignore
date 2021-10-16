@@ -16,6 +16,8 @@ hello-next/out/
 # production
 hello-next/build
 
+hello-next/pages/createblog.tsx
+
 # misc
 .hello-next/DS_Store
 hello-next/*.pem
@@ -33,3 +35,4 @@ hello-next/.env.production.local
 
 # vercel
 hello-next/.vercel
+hello-next/.gitignore

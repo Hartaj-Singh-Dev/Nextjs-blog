@@ -52,7 +52,7 @@ export default function Home({allposts}) {
       <section className={styles.blogHead}>
         <div className={styles.head}>
           <div className="myBlogPic">
-           <Image src="/AnyConv.com__Favicon.jpg" height={220} width={220}  className={styles.myPic} loading="eager"/>
+           <img src="/PFP.png" className={styles.myPic} loading="eager"/>
           </div>
           <div className={styles.blogHeadData}>
             <div style={{overflow:"hidden"}}>

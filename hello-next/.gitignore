@@ -12,6 +12,12 @@
 /.next/
 /out/
 
+/hello-next/public/AnyConv.com__Favicon.jpg
+/hello-next/public/favicon.ico
+/hello-next/public/Hartaj Singh Sidhu.jpg
+/hello-next/public/hsFavicon.ico
+
+
 # production
 /build
 
@@ -35,3 +41,5 @@ yarn-error.log*
 public/AnyConv.com__Favicon.jpg
 public/hsFavicon.ico
 public/favicon.ico
+public/nothing.png
+
