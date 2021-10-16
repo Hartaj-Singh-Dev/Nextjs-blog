@@ -31,15 +31,20 @@ section.blogHead {
   }
 
   div.head img.myPic{
-    height: 18vw;
-    width: 18vw;
+    height: 20vw;
+    width: 20vw;
     border-radius:20%;
   }
 
   div.blogHeadData {
-    width: 80vw;
-    height: 55vh;
+    width: 75%;
+    height: 40%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 
     @keyframes getUpBaby {
       from {
@@ -51,7 +56,7 @@ section.blogHead {
     }
 
     h1 {
-      font-size: 4.8rem;
+      font-size: 5vw;
       color: $bg-main-color;
       font-family: "Inter";
       animation-name: getUpBaby;
@@ -59,10 +64,9 @@ section.blogHead {
     }
 
     h4 {
-      margin: 2rem 0 0 0;
-      font-size: 1.9rem;
+      font-size:2vw;
       color: $tertiary-color;
-      font-family: "Inter";
+      font-family: "Inconsolata";
       transition: color 0.5s;
     }
     h4:hover {

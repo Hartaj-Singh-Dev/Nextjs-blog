@@ -1,29 +1,36 @@
 import React, { useState } from "react";
-import Image from 'next/image'
 import Head from 'next/head'
 import styles from './index.module.scss'
-import ReactPaginate from 'react-paginate';
-import Articles from '../components/Articles';
-import { GetStaticProps ,GetServerSideProps } from "next";
+import {GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import NonSeachArticles from "../components/nonSeachArticles";
+import SearchedArticles from "../components/SearchedArticles";
 
 
 export default function Home({allposts}) {
   const [blog, setblog] = useState("")
-  const router = useRouter()
-//  const blogs = [{title:"Cors Error" , Date:" 06-10-2005",Content:"fibvuasfhuabsgiubsiugfus" ,id:"CorsId-9815153073"},{title:"How does Internet Work" , Date:"hreuogho" ,Content:"hguighs" ,id:"howdoesinternet work"}]
+  const [isSearched, setisSearched] = useState(false)
 
-  const searchBlog =async (event)=>{
+  const router = useRouter()
+  let searchedPosts;
+  console.log(isSearched)
+
+  const searchBlog = (event)=>{
     setblog(event.target.value)
-    const POSTS =  await allposts.filter((item)=>{
+    var POSTS =  allposts.filter((item)=>{
       if(item.title.toLowerCase().includes(blog.toLowerCase())){
         return item
       }else{
         console.log("No Post found")
       }
     }) 
-    console.log(POSTS) 
+
+    console.log(POSTS)
+    searchedPosts = POSTS;
+    console.log(searchedPosts)
+    setisSearched(true) 
     return POSTS  
+   
   }
   return (
     <React.Fragment>
@@ -55,16 +62,18 @@ export default function Home({allposts}) {
            <img src="/PFP.png" className={styles.myPic} loading="eager"/>
           </div>
           <div className={styles.blogHeadData}>
-            <div style={{overflow:"hidden"}}>
+            <div style={{overflow:"hidden"}} className={styles.nameofBlog}>   
                <h1>
                       Hartaj Writes 
                </h1>
              </div>
+             <div className={styles.blogDescription}>
              <h4>
              The Hartaj Writes blog by Hartaj Singh.
              Straight Forward and simple articles on web development and 
              Computer Programming.
              </h4>
+             </div>
           </div>
 
          <div className={styles.socialLinks}>
@@ -82,11 +91,13 @@ export default function Home({allposts}) {
           <input type="search" placeholder="Search Blogs .."  name="blogType" value={blog} onChange={(event)=>{searchBlog(event)}}/>
         </div>
         <div className={styles.posts}>
-          {
+
+          { isSearched ? <SearchedArticles LISTOFPOSTS={searchedPosts}/> : <NonSeachArticles LISTOFPOSTS={allposts}/> }
+          {/* {
             allposts.map((itemData)=>{
               return <Articles title={itemData.title} key={itemData._id} date={itemData.date} content={itemData.content}/>
             })
-          }
+          } */}
         </div>
       </section>
       <footer className={styles.blogFooter}>
