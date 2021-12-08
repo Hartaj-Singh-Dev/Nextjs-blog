@@ -5,7 +5,7 @@ div.article {
   padding: 0.8rem 1rem;
   border-radius: 7px;
   width: 55vw;
-  height: 11rem;
+  height:13vw;
   margin: 1rem 0 2rem 0;
   font-family: "Inter";
   cursor: pointer;
@@ -20,7 +20,7 @@ div.article {
   //          -13px -13px 56px #ffffff;
 
   div.articleHead h1 {
-    font-size: 1.3rem;
+    font-size: 2vw;
     color: $hover-color;
   }
   div.articleHead h1:hover {
@@ -29,12 +29,22 @@ div.article {
 
   div.articleDate {
     margin: 5px 0 0 0;
+    font-size: 0.9vw;
+    b{
+      font-weight: 500;
+      font-size: 1vw;
+    }
   }
 
   div.someBlogData {
-    height: 5.01rem;
+    height: 6vw;
     margin: 6px 0 0 0;
     overflow: hidden;
+    font-size: 0.9vw;
+    b{
+      font-weight: 500;
+      font-weight: 1vw;
+    }
   }
 }
 
@@ -49,8 +59,8 @@ div.article:hover {
     border: $secondary-main-color 2px solid;
     padding: 0.4rem 0.7rem;
     border-radius: 7px;
-    width: 90vw;
-    height: 17rem;
+    width: 94vw;
+    height: 39vw;
     margin: 0.5rem 0 1.6rem 0;
     font-family: "Inter";
     cursor: pointer;
@@ -65,7 +75,7 @@ div.article:hover {
     //          -13px -13px 56px #ffffff;
 
     div.articleHead h1 {
-      font-size: 1.3rem;
+      font-size: 4.5vw;
       color: $hover-color;
     }
     div.articleHead h1:hover {
@@ -74,12 +84,17 @@ div.article:hover {
 
     div.articleDate {
       margin: 3px 0 0 0;
+      font-size: 3vw;
+      b{
+        font-size: 3.5vw;
+      }
     }
 
     div.someBlogData {
-      height: 9rem;
+      height: 20vw;
       margin: 3px 0 0 0;
       overflow: hidden;
+      font-size: 3vw;
     }
   }
 
@@ -89,3 +104,4 @@ div.article:hover {
     -moz-box-shadow: 10px 10px 0px 0px $secondary-main-color;
   }
 }
+

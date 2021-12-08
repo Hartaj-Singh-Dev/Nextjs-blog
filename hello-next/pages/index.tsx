@@ -3,33 +3,32 @@ import Head from 'next/head'
 import styles from './index.module.scss'
 import {GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import NonSeachArticles from "../components/nonSeachArticles";
+import NonSeachArticles from "../components/NonSeachArticles";
 import SearchedArticles from "../components/SearchedArticles";
 
 
 export default function Home({allposts}) {
   const [blog, setblog] = useState("")
+  const [searchedBlogArray, setsearchedBlogArray] = useState([])
   const [isSearched, setisSearched] = useState(false)
 
-  const router = useRouter()
   let searchedPosts;
-  console.log(isSearched)
+  console.log(`is seached ${isSearched}`)
 
-  const searchBlog = (event)=>{
-    setblog(event.target.value)
-    var POSTS =  allposts.filter((item)=>{
+  const searchBlog = async (event)=>{
+    await setblog(event.target.value)
+    var POSTS = await  allposts.filter((item)=>{
       if(item.title.toLowerCase().includes(blog.toLowerCase())){
         return item
       }else{
         console.log("No Post found")
       }
     }) 
-
-    console.log(POSTS)
     searchedPosts = POSTS;
-    console.log(searchedPosts)
-    setisSearched(true) 
-    return POSTS  
+    searchedBlogArray.push(POSTS)
+    console.log(POSTS)
+    console.log(` searched blog array ${searchedBlogArray}`)
+    setisSearched(true)  
    
   }
   return (
@@ -92,7 +91,7 @@ export default function Home({allposts}) {
         </div>
         <div className={styles.posts}>
 
-          { isSearched ? <SearchedArticles LISTOFPOSTS={searchedPosts}/> : <NonSeachArticles LISTOFPOSTS={allposts}/> }
+          { isSearched ? <SearchedArticles listofposts={searchedPosts}/> : <NonSeachArticles listofposts={allposts}/> }
           {/* {
             allposts.map((itemData)=>{
               return <Articles title={itemData.title} key={itemData._id} date={itemData.date} content={itemData.content}/>
