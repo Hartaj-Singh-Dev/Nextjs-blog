@@ -77,7 +77,9 @@ const blogarrays = new mongoose.model("blogarrays",blogSchema)
 
 //Schema
 
-
+app.get("/", (req,res)=>{
+    res.json({Response:"Yes API is working 🚀"})
+})
 
 
 app.get("/allPosts",async (req,res)=>{
